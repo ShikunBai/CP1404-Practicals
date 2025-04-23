@@ -1,0 +1,29 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_number
+            text: '34'
+            font_size: 48
+            multiline: False
+            on_text: app.handle_calculate(self.text)
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.2
+            Button:
+                text: 'Up'
+                on_press: app.handle_up(input_number.text)
+            Button:
+                text: 'Down'
+                on_press: app.handle_down(input_number.text)
+
+#    Button:
+#        text: 'Convert Miles to Kilometres'
+#        on_press: app.handle_calculate(input_number.text)
+
+    Label:
+        text: app.message
+        id: output_label
+        font_size: 48
+        color: (1, 1, 0, 1)
